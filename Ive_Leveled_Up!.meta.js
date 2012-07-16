@@ -4,5 +4,7 @@
 // @description    Leveling system for Gaming.SE
 // @include        http://gaming.stackexchange.com/*
 // @include        http://meta.gaming.stackexchange.com/*
-// @version        1.0
+// @updateURL      http://imgineme.com/IveLeveledUp/Ive_Leveled_Up!.meta.js
+// @downloadURL    http://imgineme.com/IveLeveledUp/Ive_Leveled_Up!.user.js
+// @version        1.3
 // ==/UserScript==

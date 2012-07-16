@@ -4,8 +4,17 @@
 // @description    Leveling system for Gaming.SE
 // @include        http://gaming.stackexchange.com/*
 // @include        http://meta.gaming.stackexchange.com/*
-// @version        1.0
+// @updateURL      http://imgineme.com/IveLeveledUp/Ive_Leveled_Up!.meta.js
+// @downloadURL    http://imgineme.com/IveLeveledUp/Ive_Leveled_Up!.user.js
+// @version        1.3
 // ==/UserScript==
+
+function $(id) {
+	return document.getElementById(id);
+}
+function log(obj) {
+	if(console.log) console.log(obj);
+}
 
 // Shortcut for document.createElement
 function $create(type, attributes) {
@@ -51,6 +60,23 @@ function get(url, cb, err) {
 	});
 }
 
+if(!GM_addStyle) {
+	GM_addStyle = function (str) {
+		document.head.appendChild($create('style', str));
+	}
+}
+if (!this.GM_getValue || (this.GM_getValue.toString && this.GM_getValue.toString().indexOf("not supported")>-1)) {
+    this.GM_getValue=function (key,def) {
+        return localStorage[key] || def;
+    };
+    this.GM_setValue=function (key,value) {
+        return localStorage[key]=value;
+    };
+    this.GM_deleteValue=function (key) {
+        return delete localStorage[key];
+    };
+}
+
 /**
   *	Options object to hold both default and user configured options.
   */
@@ -59,17 +85,14 @@ var options = (function() {
 	this.DEFAULT_NEWVERSION = 0.0,
 	this.DEFAULT_UPDATECHECK = 0;
 	
-	this.newversion = GM_getValue("newversion", this.DEFAULT_NEWVERSION),
-	this.updateCheck = GM_getValue("updateCheck", this.DEFAULT_UPDATECHECK);
+	this.newversion = GM_getValue("newver", this.DEFAULT_NEWVERSION),
+	this.updateCheck = GM_getValue("updtTime", this.DEFAULT_UPDATECHECK);
 	
 	return this;
 })();
 
 
-var $ = document.getElementById,
-	log = console.log || function () {},
-	version = GM_info.script.version,
-	
+var version = 1.3,
 	rateVal = .316261;
 
 GM_addStyle('\
