@@ -6,5 +6,5 @@
 // @include        http://meta.gaming.stackexchange.com/*
 // @updateURL      http://imgineme.com/IveLeveledUp/Ive_Leveled_Up!.meta.js
 // @downloadURL    http://imgineme.com/IveLeveledUp/Ive_Leveled_Up!.user.js
-// @version        1.3
+// @version        2.0
 // ==/UserScript==
