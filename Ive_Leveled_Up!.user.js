@@ -127,8 +127,6 @@
 
 	// Icon for display next to levels
 	function levelIcon (w,h) {
-		if(!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Shape", "1.0"))
-			return "&#9728; "
 		w = w || 128;
 		h = h || w;
 		w = parseInt(w) * .9, h = parseInt(h) * .9;
